@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","32","test_returns_200[/services/face]","tests","Wed May 07 10:46:59 TRT 2025","passed","Wed May 07 10:46:59 TRT 2025","","test_api_endpoints","",""
+"","30","test_returns_200[/services/detections]","tests","Wed May 07 10:46:59 TRT 2025","passed","Wed May 07 10:46:59 TRT 2025","","test_api_endpoints","",""
+"","42","test_returns_200[/services/images]","tests","Wed May 07 10:46:59 TRT 2025","passed","Wed May 07 10:46:59 TRT 2025","","test_api_endpoints","",""
+"","26","test_returns_200[/services/deviceStatus]","tests","Wed May 07 10:46:59 TRT 2025","passed","Wed May 07 10:46:59 TRT 2025","","test_api_endpoints","",""
+"","28","test_returns_200[/services/health]","tests","Wed May 07 10:46:59 TRT 2025","passed","Wed May 07 10:46:59 TRT 2025","","test_api_endpoints","",""
