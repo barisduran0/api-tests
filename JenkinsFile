@@ -1,0 +1,39 @@
+pipeline {
+  agent any
+  stages {
+    stage('Setup Python') {
+      steps {
+        sh '''
+          python -m venv venv
+          . venv/bin/activate
+          pip install -r requirements.txt
+        '''
+      }
+    }
+    stage('Run tests') {
+      steps {
+        sh '''
+          . venv/bin/activate
+          pytest --count 5 \
+                 --alluredir=reports/allure-results \
+                 --junitxml=reports/junit.xml \
+                 --html=reports/report.html --self-contained-html
+        '''
+      }
+      post {
+        always {
+          junit 'reports/junit.xml'
+          allure includeProperties: false,
+                 results: [[path: 'reports/allure-results']]
+          publishHTML(target: [
+            reportName: 'PyTest HTML',
+            reportDir: 'reports',
+            reportFiles: 'report.html',
+            keepAll: true
+          ])
+          archiveArtifacts artifacts: 'reports/**', fingerprint: true
+        }
+      }
+    }
+  }
+}
